@@ -34,10 +34,26 @@
                     url: 'http://www.xpanxion.com',
                     logoUrl: ''
                 },
+                title: 'Development Practice Lead, Sr. Software Engineer, Manager',
+                startDate: 'June 2017',
+                endDate: 'November 2019',
+                shortDetails: [
+                    'Clients: Anthem',
+                    'Built and maintained an OSS framework that allowed for the creation of configurable web and web-mobile applications using Java (Spring, Angular, PrimeNG, MongoDB)',
+                    'Mentored associates by providing one-on-one instruction and creation of educational material for learning various software skills'
+                ],
+                longDetails: []
+            }, {
+                company: {
+                    name: 'Xpanxion',
+                    url: 'http://www.xpanxion.com',
+                    logoUrl: ''
+                },
                 title: 'Sr. Software Engineer, Manager',
                 startDate: 'December 2012',
                 endDate: 'November 2016',
                 shortDetails: [
+                    'Client(s): IHG (Intercontinental Hotels Group)',
                     'Facilitated effective communications between the team, client, and business as the technical lead',
                     'Lead an offshore team of three through the agile process for an enterprise­level web application',
                     'Assisted in organizational activities, including: employee management, training courses, research and design, and interviewing SDET and SDE candidates'

@@ -21,3 +21,8 @@
 .certification .dateLabel {
     font-weight: bold;
 }
+.portfolio-item .portfolio-link {
+    display: flex;
+    align-items: center;
+    min-height: 260px;
+}
