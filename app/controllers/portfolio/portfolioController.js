@@ -1,5 +1,5 @@
-myPortfolio.controller('portfolioCtrl', function($scope) {
-	
+myPortfolio.controller('portfolioCtrl', function ($scope) {
+
 	$scope.projects = [{
 		title: "Anthem: Nimbus Core",
 		link: "https://github.com/openanthem/nimbus-core",
@@ -30,6 +30,13 @@ myPortfolio.controller('portfolioCtrl', function($scope) {
 		shortDescription: "The user-facing reservation website for all IHG reservations.",
 		longDescription: "From late 2016 until my end date at Xpaxion, I worked on the IHG Global website as part of a small team developing small features and bug fixes for the application. The application was a well oiled machine which had an impressive collaborative development environment utilizing chef, vagrant, and kitchen for local development and remote deployment infrastructure.",
 		thumbnailImageUrl: "img/logos/ihg-logo.png",
+		images: []
+	}, {
+		title: "tonelope.com",
+		link: "http://tonelope.com",
+		shortDescription: "My personal portfolio website.",
+		longDescription: "One of my earliest projects used as a testing ground for several different front end programming languages. This project has primarily been a static website, written several different times using different styling themes and frameworks and in plain HTML, Native Javascript, jQuery, AngularJS, and coming soon: React. While most of the data today exists on my LinkedIn page, I like to have my own personal production deployed content where I can have a visible playground to show off. Someday I'll expand this project to include a blog, instructional content, etc... you know. When I get the time :)",
+		thumbnailImageUrl: "img/portfolio/portfolio-ui.png",
 		images: []
 	}];
 });
