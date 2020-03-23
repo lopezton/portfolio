@@ -330,10 +330,11 @@
                 </div>
             </div>
             <div class="row">
-                <div id="skill_{{$index + 1}}" class="skill" ng-repeat="skill in skills">
+                <div id="skill_{{$index + 1}}" class="skill" ng-repeat="skill in skills | orderBy:'title'">
                     <a href="{{skill.link}}" title="{{skill.title}}">
-                        <span class="img-responsive img-centered logoSprite" alt="{{skill.title}}"
-                            style="background-position: 125px -{{$index * 125}}px;"></span>
+                        <!-- <span class="img-responsive img-centered logoSprite" alt="{{skill.title}}"
+                            style="background-position: 125px -{{$index * 125}}px;"></span> -->
+                        {{skill.title}}
                     </a>
                 </div>
             </div>

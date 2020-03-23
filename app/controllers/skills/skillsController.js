@@ -51,5 +51,38 @@ myPortfolio.controller('skillsCtrl', function($scope) {
 	}, {
 		title: "Rightscale",
 		link: "http://rightscale.com"
+	}, {
+		title: "React",
+		link: ""
+	}, {
+		title: "Docker",
+		link: ""
+	}, {
+		title: "AsciiDoc",
+		link: ""
+	}, {
+		title: "Angular",
+		link: ""
+	}, {
+		title: "PrimeNG",
+		link: ""
+	}, {
+		title: "Bootstrap",
+		link: ""
+	}, {
+		title: "Git",
+		link: ""
+	}, {
+		title: "Splunk",
+		link: ""
+	}, {
+		title: "Typescript",
+		link: ""
+	}, {
+		title: "RxJS",
+		link: ""
+	}, {
+		title: "SOAP/REST",
+		link: ""
 	}];
 });
