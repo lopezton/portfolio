@@ -1,93 +1,76 @@
-import React from "react";
+import React, { useContext, useState, FunctionComponent } from "react";
 import { Project } from "../model/project";
-import { PortfolioService } from "./services/portfolio.service";
 import { Image } from "../model/image";
+import AppContext from "../AppContext";
 
-type ProjectsState = {
-  projects: Project[],
-  activeProjectModalId?: number
-}
+const Projects: FunctionComponent<{ initial?: number }> = ({ initial = -1 }) => {
+  const appContext = useContext(AppContext);
+  const projects = appContext.portfolioService.getProjects();
 
-export class Projects extends React.Component<{}, ProjectsState> {
+  const [activeProjectModalId, setProjectModalId] = useState(initial);
 
-  portfolioService: PortfolioService;
-
-  constructor(props: any) {
-    super(props);
-    this.state = {
-      projects: []
-    }
-    this.portfolioService = new PortfolioService();
-  }
-
-  handleProjectClick = (id: number) => {
-    this.setState({ activeProjectModalId: id });
+  function handleProjectClick(id: number) {
+    setProjectModalId(id);
     document.body.className += ' modal-open';
   }
 
-  handleProjectModalClose = () => {
-    this.setState({ activeProjectModalId: undefined });
+  function handleProjectModalClose() {
+    setProjectModalId(initial);
     document.body.className = document.body.className.replace(' modal-open', '');
   }
 
-  componentDidMount() {
-    this.setState({
-      projects: this.portfolioService.getProjects()
-    })
-  }
+  return (
+    <>
+      <section id="projects">
+        <div className="container">
 
-  render() {
-    return (
-      <>
-        <section id="projects">
-          <div className="container">
-
-            <div className="row">
-              <div className="col-lg-12 text-center">
-                <h3 className="section-heading">Software Projects</h3>
-                <h3 className="section-subheading text-muted">All of my hard work. Click a project to view more information about it.</h3>
-              </div>
-            </div>
-
-            <div className="row">
-              {this.state.projects.map((project, i) =>
-                <ProjectPanel
-                  project={project}
-                  key={i}
-                  id={i}
-                  onClick={() => this.handleProjectClick(i)} />
-              )}
-            </div>
-
-            <div className="row">
-              <div className="col-lg-12 text-center">
-                <h4 className="section-subheading">Public Code Repositories:</h4>
-              </div>
-              <div className="col-lg-12 text-center">
-                <ul className="list-inline social-buttons">
-                  <li><a href="//github.com/lopezton" target="_blank"><i className="fa fa-github"></i></a></li>
-                  <li><a href="//bitbucket.org/lopezton" target="_blank"><i className="fa fa-bitbucket"></i></a>
-                  </li>
-                </ul>
-              </div>
+          <div className="row">
+            <div className="col-lg-12 text-center">
+              <h3 className="section-heading">Software Projects</h3>
+              <h3 className="section-subheading text-muted">All of my hard work. Click a project to view more information about it.</h3>
             </div>
           </div>
-        </section>
 
-        <div id="portfolioModals">
-          {this.state.projects.map((project, i) =>
-            <ProjectModal
-              project={project}
-              key={i}
-              id={i}
-              active={this.state.activeProjectModalId === i}
-              onClose={this.handleProjectModalClose} />
-          )}
+          <div className="row">
+            {projects.map((project, i) =>
+              <ProjectPanel
+                project={project}
+                key={i}
+                id={i}
+                onClick={() => handleProjectClick(i)} />
+            )}
+          </div>
+
+          <div className="row">
+            <div className="col-lg-12 text-center">
+              <h4 className="section-subheading">Public Code Repositories:</h4>
+            </div>
+            <div className="col-lg-12 text-center">
+              <ul className="list-inline social-buttons">
+                <li><a href="//github.com/lopezton" target="_blank"><i className="fa fa-github"></i></a></li>
+                <li><a href="//bitbucket.org/lopezton" target="_blank"><i className="fa fa-bitbucket"></i></a>
+                </li>
+              </ul>
+            </div>
+          </div>
         </div>
-      </>
-    );
-  }
+      </section>
+
+      <div id="portfolioModals">
+        {projects.map((project, i) =>
+          <ProjectModal
+            project={project}
+            key={i}
+            id={i}
+            active={activeProjectModalId === i}
+            onClose={handleProjectModalClose} />
+        )}
+      </div>
+    </>
+  );
 }
+
+export default Projects;
 
 type ProjectPanelProps = { project: Project, id: number, onClick: (id: number) => void };
 class ProjectPanel extends React.Component<ProjectPanelProps> {

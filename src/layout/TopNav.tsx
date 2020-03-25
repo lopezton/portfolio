@@ -1,6 +1,6 @@
 import React from "react";
 
-interface TopNavState {
+type TopNavState = {
   navbarShrink: boolean,
   navbarActive: boolean
 }
@@ -40,7 +40,7 @@ export class TopNav extends React.Component<any, TopNavState> {
     return (
       <nav className={navBarClassName}>
         <div className="container">
-          {/* Brand and toggle get grouped for better mobile display */}
+
           <div className="navbar-header page-scroll">
             <button type="button" className="navbar-toggle" onClick={this.handleOpenNavbar}>
               <span className="sr-only">Toggle navigation</span>
@@ -51,7 +51,6 @@ export class TopNav extends React.Component<any, TopNavState> {
             <a className="navbar-brand page-scroll" href="#page-top">Tony Lopez</a>
           </div>
 
-          {/* Collect the nav links, forms, and other content for toggling */}
           <div className={navBarMenuClassName} id="bs-example-navbar-collapse-1">
             <ul className="nav navbar-nav navbar-right">
               <li className="hidden">
@@ -77,9 +76,7 @@ export class TopNav extends React.Component<any, TopNavState> {
               </li>
             </ul>
           </div>
-          {/* /.navbar-collapse */}
         </div>
-        {/* /.container-fluid */}
       </nav>
     );
   }

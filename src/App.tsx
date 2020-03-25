@@ -8,17 +8,39 @@ import './App.css';
 import { Footer } from './layout/Footer';
 import { TopNav } from './layout/TopNav';
 import { Header } from './layout/Header';
-import { SectionContainer } from './layout/SectionContainer';
+import { About } from "./sections/About";
+import Experience from "./sections/Experience";
+import Projects from "./sections/Projects";
+import Skills from "./sections/Skills";
+import { Connect } from "./sections/Connect";
+import { Education } from "./sections/Education";
+import Certifications from "./sections/Certifications";
 
-function App() {
-  return (
-    <>
-      <TopNav></TopNav>
-      <Header></Header>
-      <SectionContainer></SectionContainer>
-      <Footer></Footer>
-    </>
-  );
+export default class App extends React.Component {
+
+  renderPortfolioContent() {
+    return (
+      <>
+        <About />
+        <Experience />
+        <Projects />
+        <Education />
+        <Certifications />
+        <Skills />
+        <Connect />
+      </>
+    );
+  }
+
+  render() {
+    const portfolioContent = this.renderPortfolioContent();
+    return (
+      <>
+        <TopNav />
+        <Header />
+        {portfolioContent}
+        <Footer />
+      </>
+    );
+  }
 }
-
-export default App;
