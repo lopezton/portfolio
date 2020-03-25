@@ -1,1 +1,0 @@
-var myPortfolio = angular.module('myPortfolio', []);

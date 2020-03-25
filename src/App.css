@@ -1,0 +1,32 @@
+.sub-row {
+    background-color: #fff;
+    margin-bottom: 20px;
+    padding: 40px;
+}
+.job-row .role-info {
+    text-align: center;
+}
+.sub-row a {
+    cursor: pointer;
+}
+.sub-row p {
+    margin-bottom: 0;
+}
+.job-row .role-info > .title {
+    font-weight: bold;
+}
+.certification h5 {
+    margin-bottom: 0;
+}
+.certification .dateLabel {
+    font-weight: bold;
+}
+.portfolio-item .portfolio-link {
+    display: flex;
+    align-items: center;
+    min-height: 260px;
+    cursor: pointer;
+}
+.portfolio-modal.fade.in {
+    display: block;
+}

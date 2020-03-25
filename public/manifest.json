@@ -1,0 +1,13 @@
+{
+  "short_name": "Tony Lopez's Portfolio",
+  "name": "The personal portfolio for Tony Lopez, an apsiring young Software Developer seeking to change the world one line of code at a time.",
+  "icons": [
+    {
+      "src": "favicon.ico",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/x-icon"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone"
+}
