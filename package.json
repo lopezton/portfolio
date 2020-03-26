@@ -1,12 +1,14 @@
 {
-  "name": "tonelopedotcom",
+  "name": "portfolio",
   "version": "0.1.0",
   "description": "The personal portfolio for Tony Lopez, an apsiring young Software Developer seeking to change the world one line of code at a time.",
   "homepage": "http://tonelope.com",
   "keywords": [
     "portfolio",
     "tonelope",
-    "react"
+    "react",
+    "typescript",
+    "static"
   ],
   "author": {
     "name": "Tony Lopez",
@@ -15,7 +17,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/lopezton/tonelopedotcom.git"
+    "url": "https://github.com/lopezton/portfolio.git"
   },
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
