@@ -122,9 +122,14 @@ class ProjectModal extends React.Component<ProjectModalProps> {
                   {/* Project Details Go Here */}
                   <h2>{project.title}</h2>
                   <p className="item-intro text-muted">{project.shortDescription}</p>
-                  {project.link &&
+                  {project.projectURL &&
                     <h5 className="text-left">
-                      <a href={project.link} target="_blank">Project Website</a>
+                      <a href={project.projectURL} target="_blank">Project Website</a>
+                    </h5>
+                  }
+                  {project.repositoryURL &&
+                    <h5 className="text-left">
+                      <a href={project.repositoryURL} target="_blank">Repository</a>
                     </h5>
                   }
                   <h5 className="text-left">About | {project.title}</h5>

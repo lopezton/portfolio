@@ -2,7 +2,8 @@ import { Image } from "./image";
 
 export interface Project {
     title: string;
-    link: string;
+    projectURL?: string;
+    repositoryURL?: string;
     shortDescription: string;
     longDescription: string;
     thumbnailImageUrl: string;
