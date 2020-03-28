@@ -19,8 +19,8 @@ export class TopNav extends React.Component<any, TopNavState> {
     window.addEventListener('scroll', () => this.setState({ navbarShrink: window.scrollY >= 300 }));
   }
 
-  handleOpenNavbar = () => {
-    this.setState({ navbarActive: true });
+  toggleNavbar = () => {
+    this.setState({ navbarActive: !this.state.navbarActive });
   }
 
   handleCloseNavbar = () => {
@@ -42,7 +42,7 @@ export class TopNav extends React.Component<any, TopNavState> {
         <div className="container">
 
           <div className="navbar-header page-scroll">
-            <button type="button" className="navbar-toggle" onClick={this.handleOpenNavbar}>
+            <button type="button" className="navbar-toggle" onClick={this.toggleNavbar}>
               <span className="sr-only">Toggle navigation</span>
               <span className="icon-bar"></span>
               <span className="icon-bar"></span>
