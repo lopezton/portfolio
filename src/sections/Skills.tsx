@@ -1,6 +1,8 @@
 import React, { useContext } from "react";
 import AppContext from "../AppContext";
 
+import "./skills.css";
+
 export const Skills = () => {
   const appContext = useContext(AppContext);
   const skills = appContext.portfolioService.getSkills().sort((a, b) => a.title.localeCompare(b.title));
@@ -14,18 +16,20 @@ export const Skills = () => {
           </div>
         </div>
         <div className="row">
-          {
-            skills.map((skill, i) => {
-              return (
-                <div key={i} id={`skill_${i + 1}`} className="skill" ng-repeat="skill in skills | orderBy:'title'">
-                  <a href={skill.link} title={skill.title}>
-                    {/* <span className="img-responsive img-centered logoSprite" alt="{skill.title}" style="background-position: 125px -{$index * 125}px;"></span> */}
-                    {skill.title}
-                  </a>
-                </div>
-              )
-            })
-          }
+          <div className="col-xs-12">
+            {
+              skills.map((skill, i) => {
+                return (
+                  <div key={i} id={`skill_${i + 1}`} className="skill" ng-repeat="skill in skills | orderBy:'title'">
+                    <a href={skill.link} title={skill.title}>
+                      {/* <span className="img-responsive img-centered logoSprite" alt="{skill.title}" style="background-position: 125px -{$index * 125}px;"></span> */}
+                      {skill.title}
+                    </a>
+                  </div>
+                )
+              })
+            }
+          </div>
         </div>
       </div>
     </section>

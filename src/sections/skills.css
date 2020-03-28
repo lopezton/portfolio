@@ -1,0 +1,11 @@
+@media(max-width:768px) {
+
+    section#skills .skill {
+        width: auto;
+        margin: 0 0 5px 0;
+    }
+    section#skills .skill:not(:last-child):after {
+        content: ",";
+        margin-right: 5px;
+    }
+}
